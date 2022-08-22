@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+* {
+    margin: auto;
+}
+
+div {
+    background-color: #050505e0;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px #888888;
+    color: white;
+    margin-top: 39px;
+    margin-right: 526px;
+    margin-left: 503px;
+    padding-bottom: 1%;
+    position: absolute;
+    /* para que os elementos não "quebrem" durante o zoom */
+}
+
+#resultado {
+    background-color: white;
+    color: black;
+    text-align: right;
+    width: 270px;
+    height: 32px;
+    margin-bottom: 10px;
+    margin-top: -25px;
+    font-size: 29px;
+    font-family: monospace;
+    padding: 1px;
+}
+
+h1 {
+    font-family: monospace;
+    text-align: center;
+    padding: 35px;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+#inNumber {
+    margin-left: 19px;
+    margin-bottom: 10px;
+    width: 85%;
+    height: 31px;
+}
+
+td {
+    color: white;
+    background-color: #686767;
+    padding: 28px;
+    font: 1em sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: black;
+    transition-duration: 0.3s;
+}
+
+/* mediante minhas observações, a regra query não funciona quando inserida ao topo do documento css */
+@media only screen and (max-width:1327px) {
+    div {
+        position: relative;
+        margin: auto;
+        max-width: 308px; /* com esta declaração, a div não ocupada todo o espaço da tela, deixando-a centralizada */
+        margin-top: 39px;
+        padding-bottom:13px;
+    } 
+} 

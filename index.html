@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/calculadora.png" type="image/x-icon">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+
+    <div>
+        <h1>Calculadora</h1>
+        <p id="resultado"></p>
+        <table style="width:25%">
+            <tr>
+                <td onclick="clean()">C</td>
+                <td onclick="back()"><</td>
+                <td onclick="insert('/')">/</td>
+                <td onclick="insert('*')">X</td>
+            </tr>
+            <tr>
+                <td onclick="insert('7')">7</td>
+                <td onclick="insert('8')">8</td>
+                <td onclick="insert('9')">9</td>
+                <td onclick="insert('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="insert('4')">4</td>
+                <td onclick="insert('5')">5</td>
+                <td onclick="insert('6')">6</td>
+                <td onclick="insert('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="insert('1')">1</td>
+                <td onclick="insert('2')">2</td>
+                <td onclick="insert('3')">3</td>
+                <td rowspan="2" onclick="calc()">=</td>
+            </tr>
+            <tr>
+                <td colspan="2" onclick="insert('0')">0</td>
+                <td onclick="insert('.')">.</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function insert(num) { // função cujo nome é "insert"
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num;
+        }
+        function clean() { // função cujo nome é "clean"
+            document.getElementById('resultado').innerHTML = ""; // irá sobrepor os caracteres com um valor vazio 
+        }
+        function back() {
+            var resultado = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
+        }  // string.substring(posição inicial, posição final); ~~> método para "fatiar" strings
+        function calc() {
+            var resultado = document.getElementById('resultado').innerHTML;
+            if (resultado) {
+                document.getElementById('resultado').innerHTML = eval(resultado);
+            }
+            else {
+                document.getElementById('resultado').innerHTML = "Insira um valor."
+            }
+        }  
+    </script>
+
+</body>
+
+</html>
